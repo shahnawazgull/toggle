@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing Toggle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             box-sizing: border-box;
@@ -28,7 +29,7 @@
         }
 
         .pricing-header h1 {
-            font-size: 1.8em;
+            font-size: 2em;
             font-weight: bold;
             color: #333;
             margin-bottom: 10px;
@@ -37,6 +38,7 @@
         .pricing-header p {
             color: #777;
             margin-bottom: 20px;
+            font-size: 1em;
         }
 
         /* Toggle switch styles */
@@ -63,7 +65,7 @@
             position: relative;
             width: 50px;
             height: 26px;
-            background-color: #ccc;
+            background-color: #f56;
             border-radius: 15px;
             cursor: pointer;
             transition: background-color 0.3s;
@@ -79,14 +81,15 @@
             top: 2px;
             left: 2px;
             transition: transform 0.4s ease;
+            transform: translateX(24px); /* Default position for monthly */
         }
 
         .toggle-button.active {
-            background-color: #f56;
+            background-color: #ccc;
         }
 
         .toggle-button.active::before {
-            transform: translateX(24px);
+            transform: translateX(0); /* Move back for yearly */
         }
 
         /* Pricing card styles */
@@ -115,7 +118,7 @@
         }
 
         .pricing-card h2 {
-            font-size: 1.2em;
+            font-size: 1.4em;
             color: #333;
             margin-bottom: 15px;
         }
@@ -128,7 +131,7 @@
         }
 
         .small-print {
-            font-size: 0.85em;
+            font-size: 0.9em;
             color: #777;
             margin-bottom: 20px;
         }
@@ -137,6 +140,21 @@
             color: #555;
             margin: 15px 0;
             font-size: 0.9em;
+        }
+
+        .social-icons {
+            margin: 15px 0;
+        }
+
+        .social-icons i {
+            font-size: 1.5em;
+            color: #555;
+            margin: 0 8px;
+            transition: color 0.3s;
+        }
+
+        .social-icons i:hover {
+            color: #f56;
         }
 
         .trial-button {
@@ -168,35 +186,55 @@
     <div class="toggle-container">
         <span class="toggle-label">Annually</span>
         <div class="toggle-switch">
-            <div class="toggle-button" id="toggle-button"></div>
+            <div class="toggle-button active" id="toggle-button"></div>
         </div>
         <span class="toggle-label">Monthly</span>
     </div>
 
     <!-- Pricing Cards -->
     <div class="pricing-cards">
-        <!-- Part-Time Creator Plan -->
+        <!-- Content Marketer Plan -->
         <div class="pricing-card">
-            <h2>Part-Time Creator</h2>
-            <div class="price" id="part-time-price">$16<span>/month</span></div>
-            <div class="small-print" id="part-time-annual">$190 billed yearly - 2 months free!</div>
+            <h2>Content Marketer</h2>
+            <div class="price" id="content-marketer-price">$29.08<span>/month</span></div>
+            <div class="small-print" id="content-marketer-annual">$349 billed yearly</div>
             <div class="features">
                 <p>5 of each Social Media Channel</p>
                 <p>Unlimited Published Videos</p>
                 <p>Premium Social Pack</p>
             </div>
+            <div class="social-icons">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-tiktok"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-pinterest"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-dropbox"></i>
+            </div>
             <a href="#" class="trial-button">Start 14-day free trial</a>
         </div>
 
-        <!-- Full-Time Creator Plan -->
+        <!-- Agency Plan -->
         <div class="pricing-card">
-            <h2>Full-Time Creator</h2>
-            <div class="price" id="full-time-price">$33<span>/month</span></div>
-            <div class="small-print" id="full-time-annual">$392 billed yearly - 2 months free!</div>
+            <h2>Agency</h2>
+            <div class="price" id="agency-price">$124.17<span>/month</span></div>
+            <div class="small-print" id="agency-annual">$1490 billed yearly</div>
             <div class="features">
                 <p>20 of each Social Media Channel</p>
                 <p>Unlimited Published Videos</p>
                 <p>Premium Social Pack</p>
+            </div>
+            <div class="social-icons">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-tiktok"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-pinterest"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-dropbox"></i>
             </div>
             <a href="#" class="trial-button">Start 14-day free trial</a>
         </div>
@@ -206,26 +244,26 @@
 <script>
     // Toggle pricing between monthly and yearly
     const toggleButton = document.getElementById('toggle-button');
-    const partTimePrice = document.getElementById('part-time-price');
-    const partTimeAnnual = document.getElementById('part-time-annual');
-    const fullTimePrice = document.getElementById('full-time-price');
-    const fullTimeAnnual = document.getElementById('full-time-annual');
+    const contentMarketerPrice = document.getElementById('content-marketer-price');
+    const contentMarketerAnnual = document.getElementById('content-marketer-annual');
+    const agencyPrice = document.getElementById('agency-price');
+    const agencyAnnual = document.getElementById('agency-annual');
 
     toggleButton.addEventListener('click', () => {
         toggleButton.classList.toggle('active');
 
         if (toggleButton.classList.contains('active')) {
             // Monthly view
-            partTimePrice.innerHTML = "$19<span>/month</span>";
-            partTimeAnnual.textContent = "";
-            fullTimePrice.innerHTML = "$39<span>/month</span>";
-            fullTimeAnnual.textContent = "";
+            contentMarketerPrice.innerHTML = "$29.08<span>/month</span>";
+            contentMarketerAnnual.textContent = "$349 billed yearly";
+            agencyPrice.innerHTML = "$124.17<span>/month</span>";
+            agencyAnnual.textContent = "$1490 billed yearly";
         } else {
-            // Yearly view (default)
-            partTimePrice.innerHTML = "$16<span>/month</span>";
-            partTimeAnnual.textContent = "$190 billed yearly - 2 months free!";
-            fullTimePrice.innerHTML = "$33<span>/month</span>";
-            fullTimeAnnual.textContent = "$392 billed yearly - 2 months free!";
+            // Yearly view
+            contentMarketerPrice.innerHTML = "$34.99<span>/month</span>";
+            contentMarketerAnnual.textContent = "";
+            agencyPrice.innerHTML = "$149.99<span>/month</span>";
+            agencyAnnual.textContent = "";
         }
     });
 </script>
