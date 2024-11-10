@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Toggle</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .pricing-container {
+            text-align: center;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .pricing-header h1 {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .pricing-header p {
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        /* Toggle switch styles */
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .toggle-label {
+            font-weight: bold;
+            color: #333;
+            font-size: 1em;
+        }
+
+        .toggle-switch {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+        }
+
+        .toggle-button {
+            position: relative;
+            width: 50px;
+            height: 26px;
+            background-color: #ccc;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-button::before {
+            content: '';
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            background-color: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.4s ease;
+        }
+
+        .toggle-button.active {
+            background-color: #f56;
+        }
+
+        .toggle-button.active::before {
+            transform: translateX(24px);
+        }
+
+        /* Pricing card styles */
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .pricing-card {
+            flex: 1;
+            max-width: 450px;
+            background-color: #fff;
+            border: 1px solid #f56;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            height: 65vh;
+        }
+
+        .pricing-card:hover {
+            transform: scale(1.05);
+        }
+
+        .pricing-card h2 {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 2em;
+            font-weight: bold;
+            color: #f56;
+            margin-bottom: 5px;
+        }
+
+        .small-print {
+            font-size: 0.85em;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            color: #555;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+
+        .trial-button {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid #f56;
+            border-radius: 5px;
+            color: #f56;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .trial-button:hover {
+            background-color: #f56;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="pricing-container">
+    <div class="pricing-header">
+        <h1>Simple Pricing to Grow Your Social Platforms</h1>
+        <p>Publish 10 videos for FREE - No credit card required</p>
+    </div>
+
+    <!-- Toggle Switch -->
+    <div class="toggle-container">
+        <span class="toggle-label">Annually</span>
+        <div class="toggle-switch">
+            <div class="toggle-button" id="toggle-button"></div>
+        </div>
+        <span class="toggle-label">Monthly</span>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="pricing-cards">
+        <!-- Part-Time Creator Plan -->
+        <div class="pricing-card">
+            <h2>Part-Time Creator</h2>
+            <div class="price" id="part-time-price">$16<span>/month</span></div>
+            <div class="small-print" id="part-time-annual">$190 billed yearly - 2 months free!</div>
+            <div class="features">
+                <p>5 of each Social Media Channel</p>
+                <p>Unlimited Published Videos</p>
+                <p>Premium Social Pack</p>
+            </div>
+            <a href="#" class="trial-button">Start 14-day free trial</a>
+        </div>
+
+        <!-- Full-Time Creator Plan -->
+        <div class="pricing-card">
+            <h2>Full-Time Creator</h2>
+            <div class="price" id="full-time-price">$33<span>/month</span></div>
+            <div class="small-print" id="full-time-annual">$392 billed yearly - 2 months free!</div>
+            <div class="features">
+                <p>20 of each Social Media Channel</p>
+                <p>Unlimited Published Videos</p>
+                <p>Premium Social Pack</p>
+            </div>
+            <a href="#" class="trial-button">Start 14-day free trial</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Toggle pricing between monthly and yearly
+    const toggleButton = document.getElementById('toggle-button');
+    const partTimePrice = document.getElementById('part-time-price');
+    const partTimeAnnual = document.getElementById('part-time-annual');
+    const fullTimePrice = document.getElementById('full-time-price');
+    const fullTimeAnnual = document.getElementById('full-time-annual');
+
+    toggleButton.addEventListener('click', () => {
+        toggleButton.classList.toggle('active');
+
+        if (toggleButton.classList.contains('active')) {
+            // Monthly view
+            partTimePrice.innerHTML = "$19<span>/month</span>";
+            partTimeAnnual.textContent = "";
+            fullTimePrice.innerHTML = "$39<span>/month</span>";
+            fullTimeAnnual.textContent = "";
+        } else {
+            // Yearly view (default)
+            partTimePrice.innerHTML = "$16<span>/month</span>";
+            partTimeAnnual.textContent = "$190 billed yearly - 2 months free!";
+            fullTimePrice.innerHTML = "$33<span>/month</span>";
+            fullTimeAnnual.textContent = "$392 billed yearly - 2 months free!";
+        }
+    });
+</script>
+
+</body>
+</html>
