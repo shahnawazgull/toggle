@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing Toggle</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         * {
             box-sizing: border-box;
@@ -49,8 +52,8 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            margin: 20px 0;
             margin-bottom: 3rem;
+            gap: 15px;
         }
 
         .toggle-label {
@@ -66,8 +69,8 @@
 
         .toggle-button {
             position: relative;
-            width: 50px;
-            height: 26px;
+            width: 55px;
+            height: 29px;
             background-color: #f56;
             border-radius: 15px;
             cursor: pointer;
@@ -77,8 +80,8 @@
         .toggle-button::before {
             content: '';
             position: absolute;
-            width: 22px;
-            height: 22px;
+            width: 23px;
+            height: 24px;
             background-color: white;
             border-radius: 50%;
             top: 2px;
@@ -101,21 +104,21 @@
         .pricing-cards {
             display: flex;
             justify-content: center;
-            gap: 47px;
+            gap: 37px;
             flex-wrap: wrap;
             margin-bottom: 5rem;
         }
 
         .pricing-card {
             flex: 1;
-            max-width: 390px;
+            max-width: 410px;
             background-color: #fff;
             border: 2px solid rgba(255, 137, 149, 0.568);
             border-radius: 20px;
             padding: 30px;
             text-align: left;
             transition: transform 0.3s;
-            height: 65vh;
+            height: 75vh;
         }
 
         .yell {
@@ -124,7 +127,7 @@
         }
 
         .pricing-card:hover {
-            transform: scale(1.0092);
+            transform: scale(1.0062);
         }
 
         .pricing-card h2 {
@@ -153,22 +156,21 @@
         }
 
         .small-subheading {
-            font-size: .87em;
+            font-size: .97em;
             color: #333;
             margin-bottom: 15px;
             line-height: 1.5;
-            max-width: 95%;
+            max-width: 97%;
         }
 
         .features {
             color: #333;
             margin: 15px 0;
-            font-size: 0.9em;
             line-height: 2.5;
         }
 
 
-        .check-icon {
+        .features p i {
             background-color: #fff;
             color: #f56;
             margin-right: 5px;
@@ -182,10 +184,12 @@
         }
 
         .social-icons i {
-            font-size: 1.5em;
+            font-size: 1.7rem;
+            font-weight: normal;
             color: #555;
             margin: 0 auto;
             padding: 5px;
+            border-radius: 5px;
             transition: color 0.3s;
             background-color: rgba(255, 85, 102, 0.103);
 
@@ -197,13 +201,14 @@
 
         .trial-button {
             display: inline-block;
-            padding: 10px 20px;
-            border: 1px solid #f56;
-            border-radius: 5px;
-            color: #f56;
+            padding: 16px 50px;
+            border: 1px solid rgba(255, 85, 102, 0.473);
+            border-radius: 10px;
+            color: rgba(255, 85, 102, 0.788);
             font-weight: bold;
             text-decoration: none;
             transition: background-color 0.3s;
+            margin-top: 1rem;
         }
 
         .trial-button:hover {
@@ -236,22 +241,24 @@
             <div class="pricing-card yell">
                 <h2>Content Marketer</h2>
                 <div class="price" id="content-marketer-price">$29.08<span>/month</span></div>
-                <div class="small-print" id="content-marketer-annual">$349 billed yearly</div>
+                <div class="small-print" id="content-marketer-annual">$349 Billed yearly</div>
                 <div class="small-subheading">Tailored for the ambitious creator: small business owners, entrepreneurs,
                     and influencers.</div>
                 <div class="features">
-                    <p><i class="fas fa-check-circle check-icon"></i> 5 of each Social Media Channel</p>
-                    <p><i class="fas fa-check-circle check-icon"></i> Unlimited Published Videos</p>
-                    <p><i class="fas fa-check-circle check-icon"></i> Premium Social Pack</p>
+                    <p><i class="fa-solid fa-check"></i> 5 of each Social Media Channel</p>
+                    <p><i class="fa-solid fa-check"></i> Unlimited Published Videos</p>
+                    <p><i class="fa-solid fa-check"></i> Premium Social Pack</p>
                 </div>
                 <div class="social-icons">
                     <i class="fab fa-instagram"></i>
                     <i class="fab fa-tiktok"></i>
-                    <i class="fab fa-facebook"></i>
+                    <i class="fa-brands fa-facebook-f"></i>
                     <i class="fab fa-pinterest"></i>
-                    <i class="fab fa-linkedin"></i>
-                    <i class="fab fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <i class="fa-brands fa-snapchat"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
                     <i class="fab fa-youtube"></i>
+                    <i class="fa-brands fa-google-drive"></i>
                     <i class="fab fa-dropbox"></i>
                 </div>
                 <a href="#" class="trial-button">Start 14-day free trial</a>
@@ -261,22 +268,24 @@
             <div class="pricing-card">
                 <h2>Agency</h2>
                 <div class="price" id="agency-price">$124.17<span>/month</span></div>
-                <div class="small-print" id="agency-annual">$1490 billed yearly</div>
+                <div class="small-print" id="agency-annual">$1490 Billed yearly</div>
                 <div class="small-subheading">The ultimate toolset for agencies aiming to dominate the digital landscape
                     with superior content distribution.</div>
                 <div class="features">
-                    <p><i class="fas fa-check-circle check-icon"></i> 20 of each Social Media Channel</p>
-                    <p><i class="fas fa-check-circle check-icon"></i> Unlimited Published Videos</p>
-                    <p><i class="fas fa-check-circle check-icon"></i> Premium Social Pack</p>
+                    <p><i class="fa-solid fa-check"></i> 20 of each Social Media Channel</p>
+                    <p><i class="fa-solid fa-check"></i> Unlimited Published Videos</p>
+                    <p><i class="fa-solid fa-check"></i> Premium Social Pack</p>
                 </div>
                 <div class="social-icons">
                     <i class="fab fa-instagram"></i>
                     <i class="fab fa-tiktok"></i>
-                    <i class="fab fa-facebook"></i>
+                    <i class="fa-brands fa-facebook-f"></i>
                     <i class="fab fa-pinterest"></i>
-                    <i class="fab fa-linkedin"></i>
-                    <i class="fab fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <i class="fa-brands fa-snapchat"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
                     <i class="fab fa-youtube"></i>
+                    <i class="fa-brands fa-google-drive"></i>
                     <i class="fab fa-dropbox"></i>
                 </div>
                 <a href="#" class="trial-button">Start 14-day free trial</a>
