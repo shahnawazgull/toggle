@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
             margin: 0;
             padding: 0;
         }
-        
+
         body {
             font-family: Arial, sans-serif;
             background-color: #fff;
@@ -83,7 +84,8 @@
             top: 2px;
             left: 2px;
             transition: transform 0.4s ease;
-            transform: translateX(24px); /* Default position for monthly */
+            transform: translateX(24px);
+            /* Default position for monthly */
         }
 
         .toggle-button.active {
@@ -91,7 +93,8 @@
         }
 
         .toggle-button.active::before {
-            transform: translateX(0); /* Move back for yearly */
+            transform: translateX(0);
+            /* Move back for yearly */
         }
 
         /* Pricing card styles */
@@ -114,7 +117,8 @@
             transition: transform 0.3s;
             height: 65vh;
         }
-        .yell{
+
+        .yell {
             background-color: rgba(255, 85, 102, 0.041);
             border: none;
         }
@@ -128,7 +132,7 @@
             color: #333;
             margin-bottom: 15px;
         }
-        
+
 
         .price {
             font-size: 2.5em;
@@ -136,7 +140,8 @@
             color: rgb(243, 104, 118);
             margin-bottom: 10px;
         }
-        .price span{
+
+        .price span {
             font-weight: normal;
             color: rgb(231, 127, 137);
         }
@@ -147,15 +152,31 @@
             margin-bottom: 20px;
         }
 
+        .small-subheading {
+            font-size: .87em;
+            color: #333;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            max-width: 95%;
+        }
+
         .features {
-            color: #555;
+            color: #333;
             margin: 15px 0;
             font-size: 0.9em;
+            line-height: 2.5;
+        }
+
+
+        .check-icon {
+            background-color: #fff;
+            color: #f56;
+            margin-right: 5px;
         }
 
         .social-icons {
             display: grid;
-            grid-template-columns: repeat(5,50px);
+            grid-template-columns: repeat(5, 50px);
             gap: 10px;
             margin: 15px 0;
         }
@@ -167,7 +188,7 @@
             padding: 5px;
             transition: color 0.3s;
             background-color: rgba(255, 85, 102, 0.103);
-            
+
         }
 
         .social-icons i:hover {
@@ -191,99 +212,105 @@
         }
     </style>
 </head>
+
 <body>
 
-<div class="pricing-container">
-    <div class="pricing-header">
-        <h1>Simple Pricing to Grow Your Social Platforms</h1>
-        <p>Publish 10 videos for FREE - No credit card required</p>
-    </div>
-
-    <!-- Toggle Switch -->
-    <div class="toggle-container">
-        <span class="toggle-label">Annually</span>
-        <div class="toggle-switch">
-            <div class="toggle-button active" id="toggle-button"></div>
-        </div>
-        <span class="toggle-label">Monthly</span>
-    </div>
-
-    <!-- Pricing Cards -->
-    <div class="pricing-cards">
-        <!-- Content Marketer Plan -->
-        <div class="pricing-card yell">
-            <h2>Content Marketer</h2>
-            <div class="price" id="content-marketer-price">$29.08<span>/month</span></div>
-            <div class="small-print" id="content-marketer-annual">$349 billed yearly</div>
-            <div class="features">
-                <p>5 of each Social Media Channel</p>
-                <p>Unlimited Published Videos</p>
-                <p>Premium Social Pack</p>
-            </div>
-            <div class="social-icons">
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-tiktok"></i>
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-pinterest"></i>
-                <i class="fab fa-linkedin"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-youtube"></i>
-                <i class="fab fa-dropbox"></i>
-            </div>
-            <a href="#" class="trial-button">Start 14-day free trial</a>
+    <div class="pricing-container">
+        <div class="pricing-header">
+            <h1>Simple Pricing to Grow Your Social Platforms</h1>
+            <p>Publish 10 videos for FREE - No credit card required</p>
         </div>
 
-        <!-- Agency Plan -->
-        <div class="pricing-card">
-            <h2>Agency</h2>
-            <div class="price" id="agency-price">$124.17<span>/month</span></div>
-            <div class="small-print" id="agency-annual">$1490 billed yearly</div>
-            <div class="features">
-                <p>20 of each Social Media Channel</p>
-                <p>Unlimited Published Videos</p>
-                <p>Premium Social Pack</p>
+        <!-- Toggle Switch -->
+        <div class="toggle-container">
+            <span class="toggle-label">Annually</span>
+            <div class="toggle-switch">
+                <div class="toggle-button active" id="toggle-button"></div>
             </div>
-            <div class="social-icons">
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-tiktok"></i>
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-pinterest"></i>
-                <i class="fab fa-linkedin"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-youtube"></i>
-                <i class="fab fa-dropbox"></i>
+            <span class="toggle-label">Monthly</span>
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="pricing-cards">
+            <!-- Content Marketer Plan -->
+            <div class="pricing-card yell">
+                <h2>Content Marketer</h2>
+                <div class="price" id="content-marketer-price">$29.08<span>/month</span></div>
+                <div class="small-print" id="content-marketer-annual">$349 billed yearly</div>
+                <div class="small-subheading">Tailored for the ambitious creator: small business owners, entrepreneurs,
+                    and influencers.</div>
+                <div class="features">
+                    <p><i class="fas fa-check-circle check-icon"></i> 5 of each Social Media Channel</p>
+                    <p><i class="fas fa-check-circle check-icon"></i> Unlimited Published Videos</p>
+                    <p><i class="fas fa-check-circle check-icon"></i> Premium Social Pack</p>
+                </div>
+                <div class="social-icons">
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-tiktok"></i>
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-pinterest"></i>
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-dropbox"></i>
+                </div>
+                <a href="#" class="trial-button">Start 14-day free trial</a>
             </div>
-            <a href="#" class="trial-button">Start 14-day free trial</a>
+
+            <!-- Agency Plan -->
+            <div class="pricing-card">
+                <h2>Agency</h2>
+                <div class="price" id="agency-price">$124.17<span>/month</span></div>
+                <div class="small-print" id="agency-annual">$1490 billed yearly</div>
+                <div class="small-subheading">The ultimate toolset for agencies aiming to dominate the digital landscape
+                    with superior content distribution.</div>
+                <div class="features">
+                    <p><i class="fas fa-check-circle check-icon"></i> 20 of each Social Media Channel</p>
+                    <p><i class="fas fa-check-circle check-icon"></i> Unlimited Published Videos</p>
+                    <p><i class="fas fa-check-circle check-icon"></i> Premium Social Pack</p>
+                </div>
+                <div class="social-icons">
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-tiktok"></i>
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-pinterest"></i>
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-dropbox"></i>
+                </div>
+                <a href="#" class="trial-button">Start 14-day free trial</a>
+            </div>
         </div>
     </div>
-</div>
 
-<script>
-    // Toggle pricing between monthly and yearly
-    const toggleButton = document.getElementById('toggle-button');
-    const contentMarketerPrice = document.getElementById('content-marketer-price');
-    const contentMarketerAnnual = document.getElementById('content-marketer-annual');
-    const agencyPrice = document.getElementById('agency-price');
-    const agencyAnnual = document.getElementById('agency-annual');
+    <script>
+        // Toggle pricing between monthly and yearly
+        const toggleButton = document.getElementById('toggle-button');
+        const contentMarketerPrice = document.getElementById('content-marketer-price');
+        const contentMarketerAnnual = document.getElementById('content-marketer-annual');
+        const agencyPrice = document.getElementById('agency-price');
+        const agencyAnnual = document.getElementById('agency-annual');
 
-    toggleButton.addEventListener('click', () => {
-        toggleButton.classList.toggle('active');
+        toggleButton.addEventListener('click', () => {
+            toggleButton.classList.toggle('active');
 
-        if (toggleButton.classList.contains('active')) {
-            // Monthly view
-            contentMarketerPrice.innerHTML = "$29.08<span>/month</span>";
-            contentMarketerAnnual.textContent = "$349 billed yearly";
-            agencyPrice.innerHTML = "$124.17<span>/month</span>";
-            agencyAnnual.textContent = "$1490 billed yearly";
-        } else {
-            // Yearly view
-            contentMarketerPrice.innerHTML = "$34.99<span>/month</span>";
-            contentMarketerAnnual.textContent = "";
-            agencyPrice.innerHTML = "$149.99<span>/month</span>";
-            agencyAnnual.textContent = "";
-        }
-    });
-</script>
+            if (toggleButton.classList.contains('active')) {
+                // Monthly view
+                contentMarketerPrice.innerHTML = "$29.08<span>/month</span>";
+                contentMarketerAnnual.textContent = "$349 billed yearly";
+                agencyPrice.innerHTML = "$124.17<span>/month</span>";
+                agencyAnnual.textContent = "$1490 billed yearly";
+            } else {
+                // Yearly view
+                contentMarketerPrice.innerHTML = "$34.99<span>/month</span>";
+                contentMarketerAnnual.textContent = "";
+                agencyPrice.innerHTML = "$149.99<span>/month</span>";
+                agencyAnnual.textContent = "";
+            }
+        });
+    </script>
 
 </body>
+
 </html>
