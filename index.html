@@ -14,7 +14,7 @@
         
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            background-color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -32,13 +32,14 @@
             font-size: 2.5em;
             font-weight: bold;
             color: #333;
+            margin-top: 1rem;
             margin-bottom: 1.567rem;
         }
 
         .pricing-header p {
-            color: #777;
-            margin-bottom: 20px;
-            font-size: 1em;
+            color: #333;
+            margin-bottom: 4rem;
+            font-size: 1.12em;
         }
 
         /* Toggle switch styles */
@@ -46,13 +47,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            text-align: center;
             margin: 20px 0;
+            margin-bottom: 3rem;
         }
 
         .toggle-label {
-            font-weight: bold;
             color: #333;
-            font-size: 1em;
+            font-size: 1.3em;
         }
 
         .toggle-switch {
@@ -96,22 +98,25 @@
         .pricing-cards {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 47px;
             flex-wrap: wrap;
             margin-bottom: 5rem;
         }
 
         .pricing-card {
             flex: 1;
-            max-width: 450px;
+            max-width: 390px;
             background-color: #fff;
-            border: 1px solid #f56;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid rgba(255, 137, 149, 0.568);
+            border-radius: 20px;
+            padding: 30px;
             text-align: left;
             transition: transform 0.3s;
             height: 65vh;
+        }
+        .yell{
+            background-color: rgba(255, 85, 102, 0.041);
+            border: none;
         }
 
         .pricing-card:hover {
@@ -123,12 +128,17 @@
             color: #333;
             margin-bottom: 15px;
         }
+        
 
         .price {
-            font-size: 2em;
+            font-size: 2.5em;
             font-weight: bold;
-            color: #f56;
-            margin-bottom: 5px;
+            color: rgb(243, 104, 118);
+            margin-bottom: 10px;
+        }
+        .price span{
+            font-weight: normal;
+            color: rgb(231, 127, 137);
         }
 
         .small-print {
@@ -144,14 +154,20 @@
         }
 
         .social-icons {
+            display: grid;
+            grid-template-columns: repeat(5,50px);
+            gap: 10px;
             margin: 15px 0;
         }
 
         .social-icons i {
             font-size: 1.5em;
             color: #555;
-            margin: 0 8px;
+            margin: 0 auto;
+            padding: 5px;
             transition: color 0.3s;
+            background-color: rgba(255, 85, 102, 0.103);
+            
         }
 
         .social-icons i:hover {
@@ -195,7 +211,7 @@
     <!-- Pricing Cards -->
     <div class="pricing-cards">
         <!-- Content Marketer Plan -->
-        <div class="pricing-card">
+        <div class="pricing-card yell">
             <h2>Content Marketer</h2>
             <div class="price" id="content-marketer-price">$29.08<span>/month</span></div>
             <div class="small-print" id="content-marketer-annual">$349 billed yearly</div>
